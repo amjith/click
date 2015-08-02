@@ -337,6 +337,8 @@ def _tempfilepager(text, cmd, color):
         f.write(text.encode(encoding))
     try:
         os.system(cmd + ' "' + filename + '"')
+    except KeyboardInterrupt:
+        pass
     finally:
         os.unlink(filename)
 
